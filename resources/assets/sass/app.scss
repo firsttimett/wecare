@@ -1,9 +1,6 @@
 
 // Fonts
-//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Font Awesome 4.7.0
-@import "node_modules/font-awesome/scss/font-awesome.scss";
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
 @import "variables";
@@ -11,7 +8,25 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Font Awesome 4.7.0
+@import "~font-awesome/scss/font-awesome";
+
+// JQuery UI
+@import '~jquery-ui/themes/base/all.css';
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.display-none{
+  display: none;
+}
+
+.bolder{
+  font-weight: bolder;
 }

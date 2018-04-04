@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ asset('img\WeCareLogo.png') }}" alt="logo" width="25px" style="padding-bottom: 5px; margin-right: 5px;">
             {{ config('app.name') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +12,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 @if (!Auth::guest())
-                    @if (Auth::user()->is_admin == 1)
+                    @if (Auth::user()->user_level == 2)
                         <li class="nav-item">
                             <a class="nav-link" href="/users">Manage Psychologists</a>
                         </li>
@@ -31,7 +32,7 @@
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                            <a class="dropdown-item" href="/dashboard/{{ Auth::user()->id }}">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
